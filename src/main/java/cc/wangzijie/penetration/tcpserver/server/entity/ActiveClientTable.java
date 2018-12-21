@@ -1,6 +1,6 @@
-package cc.wangzijie.penetration.tcpserver.entity;
+package cc.wangzijie.penetration.tcpserver.server.entity;
 
-import cc.wangzijie.penetration.tcpserver.util.LogUtil;
+import cc.wangzijie.penetration.tcpserver.server.util.LogUtil;
 
 import java.net.Socket;
 import java.util.ArrayList;

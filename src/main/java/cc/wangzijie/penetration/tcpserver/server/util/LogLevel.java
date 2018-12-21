@@ -1,4 +1,4 @@
-package cc.wangzijie.penetration.tcpserver.util;
+package cc.wangzijie.penetration.tcpserver.server.util;
 
 /**
  * 类: 日志级别枚举.

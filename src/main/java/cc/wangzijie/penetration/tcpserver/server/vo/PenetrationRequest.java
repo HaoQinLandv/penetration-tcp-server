@@ -1,4 +1,4 @@
-package cc.wangzijie.penetration.tcpserver.entity;
+package cc.wangzijie.penetration.tcpserver.server.vo;
 
 import java.util.HashMap;
 import java.util.Map;

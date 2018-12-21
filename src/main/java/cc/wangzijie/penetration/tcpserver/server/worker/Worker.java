@@ -1,7 +1,7 @@
-package cc.wangzijie.penetration.tcpserver.worker;
+package cc.wangzijie.penetration.tcpserver.server.worker;
 
-import cc.wangzijie.penetration.tcpserver.entity.ActiveClientTable;
-import cc.wangzijie.penetration.tcpserver.util.LogUtil;
+import cc.wangzijie.penetration.tcpserver.server.entity.ActiveClientTable;
+import cc.wangzijie.penetration.tcpserver.server.util.LogUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package cc.wangzijie.penetration.tcpserver.worker;
+package cc.wangzijie.penetration.tcpserver.server.worker;
 
-import cc.wangzijie.penetration.tcpserver.util.LogUtil;
+import cc.wangzijie.penetration.tcpserver.server.util.LogUtil;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
