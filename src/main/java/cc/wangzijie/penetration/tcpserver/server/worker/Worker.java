@@ -72,17 +72,20 @@ public class Worker implements Runnable {
             // 返回活跃客户端列表
             LogUtil.info("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行中: 开始输出活跃客户端列表", threadName, clientIP, clientPort);
             output.write("活跃客户端列表: " + this.table.getSocketList() + "\n");
+            output.flush();
             LogUtil.info("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行中: 活跃客户端列表输出完成", threadName, clientIP, clientPort);
 
             // 开始读取输入流
             String line;
             LogUtil.info("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行中: 开始读取输入流", threadName, clientIP, clientPort);
             while ((line = input.readLine()) != null) {
+                // 获取输入长度
+                int length = line.length();
                 LogUtil.info("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行中: 从输入流读取到行: {}",
                              threadName,
                              clientIP,
                              clientPort,
-                             line);
+                             line.replace("&nbsp", " "));
 
                 // 反序列化
                 //                JSONObject request = JSONObject.parseObject(line);
@@ -95,6 +98,16 @@ public class Worker implements Runnable {
                 //                    String   targetPort = parts[2];
                 //
                 //                }
+
+                // 返回响应
+                String response = "accept: "+length;
+                output.write(response.replace(" ", "&nbsp")+"\n");
+                output.flush();
+                LogUtil.info("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行中: 返回响应: {}",
+                             threadName,
+                             clientIP,
+                             clientPort,
+                             response);
             }
         } catch (IOException e) {
             LogUtil.error("[ TCP内网穿透(P2P)服务 ][ {} ][ 客户端 {}:{} ]运行出错: 捕获到IO异常: {}",
